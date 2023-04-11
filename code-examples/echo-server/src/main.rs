@@ -1,6 +1,10 @@
 use tokio::io::{self, AsyncReadExt, AsyncWriteExt};
 use tokio::net::TcpListener;
 
+/**
+ * echo "Hello, TCP server" | ncat 127.0.0.1 6142
+ * should print back the same input
+ */
 #[tokio::main]
 async fn main() -> io::Result<()> {
     let listener = TcpListener::bind("127.0.0.1:6142").await?;
