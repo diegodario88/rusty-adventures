@@ -57,7 +57,7 @@ impl Task {
     }
 
     pub fn complete_task(journal_path: PathBuf, task_position: usize) -> Result<()> {
-        let mut file = OpenOptions::new()
+        let file = OpenOptions::new()
             .read(true)
             .write(true)
             .open(journal_path)?;
